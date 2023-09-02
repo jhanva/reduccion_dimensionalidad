@@ -1,0 +1,2 @@
+Reducción de dimensionalidad
+=
