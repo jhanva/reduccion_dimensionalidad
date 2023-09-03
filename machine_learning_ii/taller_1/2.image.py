@@ -31,6 +31,6 @@ if __name__ == '__main__':
 
     io.show()
 
-    distance = np.linalg.norm(image, avg_cohort)
+    distance = np.linalg.norm(image - avg_cohort)
 
     print(f'Average of my face: {distance}')
