@@ -15,9 +15,7 @@ from machine_learning_ii.metadata.path import Path
 
 if __name__ == '__main__':
 
-    image = convert_image(Path.img_johan)
-
-    io.imsave(fname=Path.img_johan_transform, arr=image, plugin='pil')
+    image = convert_image(Path.img_johan, Path.img_johan_transform)
 
     plt.imshow(image, cmap='gray')
 
