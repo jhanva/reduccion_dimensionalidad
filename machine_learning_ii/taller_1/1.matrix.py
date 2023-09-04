@@ -22,6 +22,6 @@ if __name__ == '__main__':
     trace_match = traces == trace(matrix)
     determinant_match = determinant == round(det(matrix))
 
-    print(f"Rank Matches Numpy: {determinant_match}")
-    print(f"Trace Matches Numpy: {determinant_match}")
+    print(f"Rank Matches Numpy: {rank_match}")
+    print(f"Trace Matches Numpy: {trace_match}")
     print(f"Determinant Matches Numpy: {determinant_match}")
