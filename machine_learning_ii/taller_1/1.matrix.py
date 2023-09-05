@@ -1,14 +1,15 @@
 # External libraries
-from numpy.linalg import det, matrix_rank
 from numpy import trace
+from numpy.linalg import det, matrix_rank
 
 # Own libraries
+from machine_learning_ii.metadata.responses import Responses
 from machine_learning_ii.utils import algebra as al
 
 if __name__ == '__main__':
 
     matrix = al.create_matrix(4, 4)
-    print(f"Matrix:\n{matrix}")
+    print(f'Matrix:\n{matrix}')
 
     rank = al.rank_matrix(matrix)
     traces = al.trace_matrix(matrix)
@@ -22,6 +23,9 @@ if __name__ == '__main__':
     trace_match = traces == trace(matrix)
     determinant_match = determinant == round(det(matrix))
 
-    print(f"Rank Matches Numpy: {rank_match}")
-    print(f"Trace Matches Numpy: {trace_match}")
-    print(f"Determinant Matches Numpy: {determinant_match}")
+    print(f'Rank Matches Numpy: {rank_match}')
+    print(f'Trace Matches Numpy: {trace_match}')
+    print(f'Determinant Matches Numpy: {determinant_match}')
+
+    print(Responses.inverse_matrix)
+    print(Responses.eigen)
