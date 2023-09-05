@@ -1,2 +1,2 @@
-Reducción de dimensionalidad
+Dimensionality Reduction
 =
