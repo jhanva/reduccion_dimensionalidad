@@ -9,12 +9,17 @@ from machine_learning_ii.utils.image import convert_image
 
 
 def read_images(path: str) -> list:
-    """
+    """Read and return a list of images from a specified directory.
 
     Args:
-        path:
+        path: The path to the directory containing the images.
 
     Returns:
+        A list of image data.
+
+    Raises:
+        FileNotFoundError: If the specified directory does not exist.
+        Exception: If an error occurs while reading an image.
 
     """
     images_list = os.listdir(path)
