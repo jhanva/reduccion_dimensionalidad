@@ -25,6 +25,6 @@ def convert_image(path_read: str, path_save: str = None) -> np.array:
     gray_image = rgb2gray(image)
 
     if path_save:
-        io.imsave(path_save, arr=image, plugin="pil")
+        io.imsave(path_save, arr=gray_image, plugin="pil")
 
     return gray_image

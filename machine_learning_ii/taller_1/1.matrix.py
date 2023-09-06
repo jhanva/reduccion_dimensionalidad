@@ -7,7 +7,6 @@ from machine_learning_ii.metadata.responses import Responses
 from machine_learning_ii.utils import algebra as al
 
 if __name__ == '__main__':
-
     matrix = al.create_matrix(4, 4)
     print(f'Matrix:\n{matrix}')
 
