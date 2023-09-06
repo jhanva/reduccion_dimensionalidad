@@ -3,8 +3,8 @@ from numpy import trace
 from numpy.linalg import det, matrix_rank
 
 # Own libraries
-from machine_learning_ii.metadata.responses import Responses
-from machine_learning_ii.utils import algebra as al
+from python.metadata.responses import Responses
+from python.utils import algebra as al
 
 if __name__ == '__main__':
     matrix = al.create_matrix(4, 4)

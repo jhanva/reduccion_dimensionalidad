@@ -4,7 +4,7 @@ from skimage import io
 from unsupervised.python.dimensionality_reduction import SVD
 
 # Own libraries
-from machine_learning_ii.metadata.path import Path
+from python.metadata.path import Path
 
 if __name__ == '__main__':
     picture = io.imread(Path.img_johan_transform)

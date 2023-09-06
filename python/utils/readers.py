@@ -4,8 +4,8 @@ import os
 from skimage import io
 
 # Own libraries
-from machine_learning_ii.metadata.path import Path
-from machine_learning_ii.utils.image import convert_image
+from python.metadata.path import Path
+from python.utils.image import convert_image
 
 
 def read_images(path: str) -> list:

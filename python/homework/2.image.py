@@ -4,10 +4,10 @@ import numpy as np
 from skimage import io
 
 # Own libraries
-from machine_learning_ii.metadata.path import Path
-from machine_learning_ii.metadata.responses import Responses
-from machine_learning_ii.utils.image import convert_image
-from machine_learning_ii.utils.readers import read_images
+from python.metadata.path import Path
+from python.metadata.responses import Responses
+from python.utils.image import convert_image
+from python.utils.readers import read_images
 
 if __name__ == "__main__":
     image = convert_image(Path.img_johan, Path.img_johan_transform)
