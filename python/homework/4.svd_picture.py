@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     for j, k in enumerate(range(2, 22, 2)):
         svd = SVD(n_components=k)
-        matrix = svd.fit_transform(picture)
+        matrix = svd.inverse_transform(picture)
 
         row = j // 5
         col = j % 5
