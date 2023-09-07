@@ -1,9 +1,9 @@
 # Own libraries
-from python.utils.regression import mnist_logistic_regression
+from python.utils.classification import mnist_logistic_regression
 
 if __name__ == '__main__':
-    # Model without processing
+    print('\nModel without processing')
     mnist_logistic_regression()
 
-    # Model with processing
+    print('\nModel with processing')
     mnist_logistic_regression(True)

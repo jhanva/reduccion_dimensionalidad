@@ -1,18 +1,28 @@
 # External libraries
+import warnings
+
 import numpy as np
 from keras.datasets import mnist
+from sklearn import metrics
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report
+
+warnings.simplefilter("ignore")
 
 
-def mnist_logistic_regression(normalization: bool = False) -> None:
-    """Train a logistic regression classifier on the MNIST dataset to
-     distinguish between 0s and 8s.
+def mnist_logistic_regression(
+    normalization: bool = False, dimensionality_reduction=None
+) -> None:
+    """Train a logistic regression classifier on the MNIST dataset with
+        optional dimensionality reduction.
 
     Args:
         normalization: Whether to normalize pixel values to the range [0, 1].
+        dimensionality_reduction: An optional dimensionality reduction model
+            (e.g., PCA, TruncatedSVD, t-SNE) to apply before training the
+            classifier. If None, no dimensionality reduction is applied.
 
     """
+    # Load MNIST dataset
     (train_data, train_labels), (test_data, test_labels) = mnist.load_data()
 
     if normalization:
@@ -31,9 +41,15 @@ def mnist_logistic_regression(normalization: bool = False) -> None:
     test_data = test_data[test_filter]
     test_labels = test_labels[test_filter]
 
+    # Apply dimensionality reduction if specified
+    if dimensionality_reduction:
+        train_data = dimensionality_reduction.fit_transform(train_data)
+        test_data = dimensionality_reduction.transform(test_data)
+
+    # Train logistic regression classifier
     logistic_regression = LogisticRegression(random_state=1234)
     logistic_regression.fit(train_data, train_labels)
 
+    # Make predictions and print classification report
     labels_predict = logistic_regression.predict(test_data)
-
-    print(classification_report(test_labels, labels_predict))
+    print(metrics.accuracy_score(test_labels, labels_predict))
