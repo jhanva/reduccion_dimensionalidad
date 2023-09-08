@@ -1,5 +1,4 @@
-from sklearn.decomposition import TruncatedSVD
-from sklearn.decomposition import PCA
+from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.manifold import TSNE
 
 from python.utils.classification import mnist_logistic_regression

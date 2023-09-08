@@ -1,5 +1,5 @@
-import numpy as np
 import fbpca
+import numpy as np
 
 
 class RobustPCA:

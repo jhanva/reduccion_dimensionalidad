@@ -107,7 +107,8 @@ def determinant_matrix(matrix: np.array) -> int:
     for j in range(n):
         # Calculate the cofactor of the entry (0, j)
         cofactor = matrix[0][j] * determinant_matrix(
-            calculate_cofactor(matrix, 0, j))
+            calculate_cofactor(matrix, 0, j)
+        )
 
         # Alternate the sign based on the column index
         if j % 2 == 1:

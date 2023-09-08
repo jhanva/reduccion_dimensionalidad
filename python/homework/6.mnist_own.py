@@ -1,5 +1,3 @@
-import joblib
-
 # Own libraries
 from unsupervised.python.dimensionality_reduction import PCA, SVD, TSNE
 
@@ -16,6 +14,6 @@ if __name__ == '__main__':
     print('\nOwn PCA:')
     mnist_logistic_regression(dimensionality_reduction=pca, plot=True)
 
-    tsne = TSNE(n_components=2, n_iter=10, target_perplexity=1.)
+    tsne = TSNE(n_components=2, n_iter=10, target_perplexity=1.0)
     print('\nOwn t-SNE:')
     mnist_logistic_regression(dimensionality_reduction=tsne, plot=True)

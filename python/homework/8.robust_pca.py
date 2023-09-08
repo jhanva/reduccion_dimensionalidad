@@ -5,10 +5,10 @@ from python.utils.rpca import RobustPCA
 
 if __name__ == '__main__':
     (x_train, y_train), _ = cifar10.load_data()
-    x_train = x_train.astype('float32') / 255.
+    x_train = x_train.astype(float) / 255.0
     x_train = x_train.reshape(-1, 32 * 32)
 
-    x_train = x_train[: 100]
+    x_train = x_train[:100]
 
     robust_pca = RobustPCA()
     L, S, examples = robust_pca.pcp(x_train.T)
@@ -17,8 +17,18 @@ if __name__ == '__main__':
 
     example_images = example_images.reshape(-1, 32, 32)
 
-    class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog',
-                   'frog', 'horse', 'ship', 'truck']
+    class_names = [
+        'airplane',
+        'automobile',
+        'bird',
+        'cat',
+        'deer',
+        'dog',
+        'frog',
+        'horse',
+        'ship',
+        'truck',
+    ]
 
     fig, axs = plt.subplots(2, 10, figsize=(15, 4))
     for i in range(10):
