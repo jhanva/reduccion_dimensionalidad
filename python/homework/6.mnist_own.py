@@ -7,12 +7,12 @@ from python.utils.classification import mnist_logistic_regression
 if __name__ == '__main__':
     svd = SVD(n_components=2)
     print('\nOwn SVD:')
-    mnist_logistic_regression(dimensionality_reduction=svd)
+    mnist_logistic_regression(dimensionality_reduction=svd, plot=True)
 
     pca = PCA(n_components=2)
     print('\nOwn PCA:')
-    mnist_logistic_regression(dimensionality_reduction=pca)
+    mnist_logistic_regression(dimensionality_reduction=pca, plot=True)
 
     tsne = TSNE(n_components=2)
     print('\nOwn t-SNE:')
-    mnist_logistic_regression(dimensionality_reduction=tsne)
+    mnist_logistic_regression(dimensionality_reduction=tsne, plot=True)

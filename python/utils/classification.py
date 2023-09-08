@@ -1,5 +1,6 @@
 # External libraries
 import warnings
+import matplotlib.pyplot as plt
 
 import numpy as np
 from keras.datasets import mnist
@@ -10,7 +11,7 @@ warnings.simplefilter("ignore")
 
 
 def mnist_logistic_regression(
-    normalization: bool = False, dimensionality_reduction=None
+    normalization: bool = False, dimensionality_reduction=None, plot=False
 ) -> None:
     """Train a logistic regression classifier on the MNIST dataset with
         optional dimensionality reduction.
@@ -20,6 +21,7 @@ def mnist_logistic_regression(
         dimensionality_reduction: An optional dimensionality reduction model
             (e.g., PCA, TruncatedSVD, t-SNE) to apply before training the
             classifier. If None, no dimensionality reduction is applied.
+        plot:
 
     """
     # Load MNIST dataset
@@ -44,7 +46,18 @@ def mnist_logistic_regression(
     # Apply dimensionality reduction if specified
     if dimensionality_reduction:
         train_data = dimensionality_reduction.fit_transform(train_data)
-        test_data = dimensionality_reduction.transform(test_data)
+        test_data = dimensionality_reduction.fit_transform(test_data)
+
+    if plot:
+        x = train_data[:, 0]
+        y = train_data[:, 1]
+
+        plt.scatter(x, y, c=train_labels, cmap='viridis')
+
+        plt.xlabel('axis 1')
+        plt.ylabel('axis 2')
+
+        plt.show()
 
     # Train logistic regression classifier
     logistic_regression = LogisticRegression(random_state=1234)
