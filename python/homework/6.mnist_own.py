@@ -7,7 +7,7 @@ if __name__ == '__main__':
     svd = SVD(n_components=2)
     print('\nOwn SVD:')
     mnist_logistic_regression(
-        dimensionality_reduction=None, plot=True, save_model=True
+        dimensionality_reduction=svd, plot=True, save_model=False
     )
 
     pca = PCA(n_components=2)
