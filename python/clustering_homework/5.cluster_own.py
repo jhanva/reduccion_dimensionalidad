@@ -1,16 +1,13 @@
 # External libraries
 import matplotlib.pyplot as plt
-
 from sklearn.datasets import make_blobs
 
 # Own libraries
-from unsupervised.python.clustering import KMeans
-from unsupervised.python.clustering import KMedoids
+from unsupervised.python.clustering import KMeans, KMedoids
 
 from python.utils.silhouette import plot_silhouette_comparison
 
 if __name__ == '__main__':
-
     X, y = make_blobs(
         n_samples=500,
         n_features=2,
